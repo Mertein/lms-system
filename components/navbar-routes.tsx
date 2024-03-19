@@ -28,7 +28,13 @@ export const NavbarRoutes = () => {
               Salir
             </Button>
           </Link>
-        ) : null}
+        ) : (
+          <Link href="/teacher/courses">
+            <Button size="sm" variant="ghost" className="ml-2">
+              Modo Profesor
+            </Button>
+          </Link>
+        )}
         <UserButton afterSignOutUrl="/" />
       </div>
     </>
