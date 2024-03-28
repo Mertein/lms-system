@@ -2,11 +2,18 @@ import { auth } from "@clerk/nextjs";
 import db from "@/lib/db";
 import { redirect } from "next/navigation";
 import { IconBadge } from "@/app/(dashboard)/_componentes/icon-badge";
-import { LayoutDashboard } from "lucide-react";
+import {
+  CircleDollarSign,
+  File,
+  LayoutDashboard,
+  ListChecks,
+} from "lucide-react";
 import { TitleForm } from "./_componentes/title-form";
 import { DescriptionForm } from "./_componentes/description-form";
 import { ImageForm } from "./_componentes/image-form";
 import { CategoryForm } from "./_componentes/category-form";
+import { PriceForm } from "./_componentes/price-form";
+import { AttachmentForm } from "./_componentes/attachment-form";
 export default async function CourseIdPage({
   params,
 }: {
@@ -19,6 +26,13 @@ export default async function CourseIdPage({
     where: {
       id: params.courseId,
       userId,
+    },
+    include: {
+      attachments: {
+        orderBy: {
+          createdAt: "desc",
+        },
+      },
     },
   });
 
@@ -68,6 +82,25 @@ export default async function CourseIdPage({
               value: category.id,
             }))}
           />
+        </div>
+        <div className="space-y-6">
+          <div>
+            <div className="flex items-center gap-x-2 ">
+              <IconBadge icon={ListChecks} />
+              <h2 className="text-xl">Curso Chapters</h2>
+            </div>
+            <div>TODO: courses</div>
+          </div>
+          <div className="flex items-center gap-x-2">
+            <IconBadge icon={CircleDollarSign} />
+            <h2 className="text-xl">Vende tu curso</h2>
+          </div>
+          <PriceForm initialData={course} courseId={course.id} />
+          <div className="flex items-center gap-x-2">
+            <IconBadge icon={File} />
+            <h2 className="text-xl">Recursos & Archivos</h2>
+          </div>
+          <AttachmentForm initialData={course} courseId={params.courseId} />
         </div>
       </div>
     </div>
