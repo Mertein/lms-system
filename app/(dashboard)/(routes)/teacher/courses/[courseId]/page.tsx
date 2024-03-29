@@ -14,6 +14,7 @@ import { ImageForm } from "./_componentes/image-form";
 import { CategoryForm } from "./_componentes/category-form";
 import { PriceForm } from "./_componentes/price-form";
 import { AttachmentForm } from "./_componentes/attachment-form";
+import { ChaptersForm } from "./_componentes/chapter-form";
 export default async function CourseIdPage({
   params,
 }: {
@@ -31,6 +32,11 @@ export default async function CourseIdPage({
       attachments: {
         orderBy: {
           createdAt: "desc",
+        },
+      },
+      chapters: {
+        orderBy: {
+          position: "asc",
         },
       },
     },
@@ -89,7 +95,9 @@ export default async function CourseIdPage({
               <IconBadge icon={ListChecks} />
               <h2 className="text-xl">Curso Chapters</h2>
             </div>
-            <div>TODO: courses</div>
+            <div>
+              <ChaptersForm initialData={course} courseId={params.courseId} />
+            </div>
           </div>
           <div className="flex items-center gap-x-2">
             <IconBadge icon={CircleDollarSign} />
