@@ -1,11 +1,12 @@
 import { IconBadge } from "@/app/(dashboard)/_componentes/icon-badge";
-import { ArrowLeft, LayoutDashboard } from "lucide-react";
+import { ArrowLeft, LayoutDashboard, Video } from "lucide-react";
 import Link from "next/link";
 import { ChapterTitleForm } from "./_componentes/chapter-title-form";
 import db from "@/lib/db";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 import { ChapterDescriptionForm } from "./_componentes/chapter-description-form";
+import { ChapterAccessForm } from "./_componentes/chapter-access-form";
 
 const ChapterIdPage = async ({
   params,
@@ -74,6 +75,17 @@ const ChapterIdPage = async ({
             courseId={params.courseId}
             initialData={chapter}
           />
+          <ChapterAccessForm
+            initialData={chapter}
+            courseId={params.courseId}
+            chapterId={params.chapterId}
+          />
+        </div>
+        <div>
+          <div className="flex items-center gap-x-2">
+            <IconBadge icon={Video} />
+            <h2 className="text-xl">Agregar un Video</h2>
+          </div>
         </div>
       </div>
     </div>
