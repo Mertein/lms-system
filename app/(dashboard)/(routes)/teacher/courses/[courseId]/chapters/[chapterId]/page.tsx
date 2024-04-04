@@ -5,6 +5,7 @@ import { ChapterTitleForm } from "./_componentes/chapter-title-form";
 import db from "@/lib/db";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
+import { ChapterDescriptionForm } from "./_componentes/chapter-description-form";
 
 const ChapterIdPage = async ({
   params,
@@ -66,6 +67,11 @@ const ChapterIdPage = async ({
           <ChapterTitleForm
             courseId={params.courseId}
             chapterId={params.chapterId}
+            initialData={chapter}
+          />
+          <ChapterDescriptionForm
+            chapterId={params.chapterId}
+            courseId={params.courseId}
             initialData={chapter}
           />
         </div>
