@@ -89,6 +89,12 @@ export const ChapterVideoForm = ({
           </div>
         </div>
       )}
+      {!isEditing && (
+        <div className="text-xs text-muted-foreground mt-4">
+          Los vídeos pueden tardar unos minutos en procesarse. Actualice la
+          página si no aparecen los vídeos.
+        </div>
+      )}
     </div>
   );
 };
