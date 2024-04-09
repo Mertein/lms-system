@@ -7,9 +7,8 @@ const SearchPage = async () => {
       name: "asc",
     },
   });
-
   return (
-    <div className="">
+    <div className="p-6">
       <Categories items={categories} />
     </div>
   );
