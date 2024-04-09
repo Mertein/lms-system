@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { ConfettiProvider } from "@/components/providers/confetti-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,7 +20,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="es">
         <Toaster />
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <ConfettiProvider />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );

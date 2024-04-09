@@ -109,7 +109,7 @@ export default async function CourseIdPage({
             <div>
               <div className="flex items-center gap-x-2 ">
                 <IconBadge icon={ListChecks} />
-                <h2 className="text-xl">Curso Chapters</h2>
+                <h2 className="text-xl">Capitulos del Curso</h2>
               </div>
               <div>
                 <ChaptersForm initialData={course} courseId={params.courseId} />
