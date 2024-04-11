@@ -68,7 +68,7 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
             <Image
               alt="Upload"
               fill
-              className="object-cover rouned-md"
+              className="object-cover rounded-md"
               src={initialData.imageUrl}
             />
           </div>
