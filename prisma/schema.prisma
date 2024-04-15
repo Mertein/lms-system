@@ -97,6 +97,8 @@ model UserProgress {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@unique([userId, chapterId])
 }
 
 model Purchase {
