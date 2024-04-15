@@ -130,7 +130,7 @@ export async function PATCH(req: Request, {params} : {params: {courseId: string,
         playback_policy: ["public"],
         test: false,
       });
-  
+      console.log(asset)
       await db.muxData.create({
         data: {
           chapterId: params.chapterId,

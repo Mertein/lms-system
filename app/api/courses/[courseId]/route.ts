@@ -28,12 +28,9 @@ export async function DELETE(req: Request, {params} : {params: {courseId: string
         }
       }
     });
-
-
     if(!course) {
       return new NextResponse("Not found", {status: 404});
     }
-
     for(const chapter of course.chapters) {
       if(chapter.muxData?.assetId) {
         await mux.video.assets.delete(chapter.muxData.assetId); 
