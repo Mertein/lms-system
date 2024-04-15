@@ -27,7 +27,7 @@ export const CourseSidebarItem = ({
     return router.push(`/courses/${courseId}/chapters/${id}`);
   };
 
-  const Icon = !isLocked ? Lock : isCompleted ? CheckCircle : PlayCircle;
+  const Icon = isLocked ? Lock : isCompleted ? CheckCircle : PlayCircle;
   return (
     <button
       type="button"

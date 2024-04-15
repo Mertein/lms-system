@@ -124,13 +124,12 @@ export async function PATCH(req: Request, {params} : {params: {courseId: string,
           },
         });
       };
-
+      
       const asset = await mux.video.assets.create({
         input: values.videoUrl,
         playback_policy: ["public"],
         test: false,
       });
-      console.log(asset)
       await db.muxData.create({
         data: {
           chapterId: params.chapterId,
