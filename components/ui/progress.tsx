@@ -12,7 +12,7 @@ export interface ProgressProps
 type CombinedProgressProps = ProgressProps &
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>;
 
-const progressVariants = cva("h-full w-full flex-1 bg-primary transition-all", {
+const progressVariants = cva("h-full w-full flex-1 transition-all", {
   variants: {
     variant: {
       default: "bg-sky-600",

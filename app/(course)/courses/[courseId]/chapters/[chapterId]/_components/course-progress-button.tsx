@@ -42,13 +42,12 @@ export const CourseProgressButton = ({
       if (!isCompleted && nextChapterId) {
         router.push(`/courses/${courseId}/chapters/${nextChapterId}`);
       }
+      toast.success("Tu progreso ha sido actualizado.");
+      router.refresh();
     } catch {
       toast.error(
         "Ocurrió un error al actualizar tu progreso. Intenta de nuevo.",
       );
-
-      toast.success("Tu progreso ha sido actualizado.");
-      router.refresh();
     } finally {
       setIsLoading(false);
     }
