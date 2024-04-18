@@ -13,6 +13,7 @@ async function main() {
         { name: "Contabilidad" },
         { name: "Ingeniería" },
         { name: "Filmación" },
+        { name: "Gaming" },
       ]
     });
 

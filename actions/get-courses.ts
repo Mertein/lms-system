@@ -23,6 +23,7 @@ export const getCourses = async ({userId, title, categoryId}: GetCourses): Promi
           mode: "insensitive",
         },
         categoryId,
+        isPublished: true,
       },
       include: {
         category: true,

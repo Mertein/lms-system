@@ -12,6 +12,8 @@ import {
   FcSportsMode,
 } from "react-icons/fc";
 
+import { SiYoutubegaming } from "react-icons/si";
+
 interface CategoriesProps {
   items: Category[];
 }
@@ -24,6 +26,7 @@ const iconMap: Record<Category["name"], IconType> = {
   Contabilidad: FcSalesPerformance,
   Ingeniería: FcEngineering,
   Filmación: FcFilmReel,
+  Gaming: SiYoutubegaming,
 };
 
 export const Categories = ({ items }: CategoriesProps) => {

@@ -57,6 +57,7 @@ export default async function CourseIdPage({
     course.categoryId,
     course.price,
     course.description,
+    course.chapters.length > 0,
   ];
 
   const totalFields = requiredFields.length;

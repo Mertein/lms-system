@@ -20,7 +20,6 @@ export const CourseSidebarItem = ({
 }: CourseSidebarItemProps) => {
   const router = useRouter();
   const pathname = usePathname();
-
   const isActive = pathname.includes(id);
 
   const onClick = () => {
